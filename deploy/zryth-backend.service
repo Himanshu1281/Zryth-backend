@@ -1,0 +1,13 @@
+[Unit]
+Description=Zryth backend API
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/zryth-backend
+EnvironmentFile=/opt/zryth-backend/.env
+ExecStart=/usr/bin/node dist/index.js
+Restart=always
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target
